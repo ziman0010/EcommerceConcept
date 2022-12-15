@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct EffectiveMobileTestApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationHost()
+                    .environmentObject(
+                        NavigationStack(
+                            NavigationItem(view: AnyView(StoreView()))
+                        )
+                    )
         }
     }
 }
